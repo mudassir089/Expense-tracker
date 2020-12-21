@@ -1,38 +1,135 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background-color: #f7f7f7;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+.container {
+  margin: 30px auto;
+  width: 350px;
+}
+h1 {
+  letter-spacing: 1px;
+  margin: 0;
+  color: dodgerblue;
+  font-size: 50px;
+}
+h2 {
+  font-size: 30px;
+  color: darkslategray;
+}
+h3 {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+  margin: 40px 0 10px;
+}
+h4 {
+  margin: 5px;
+  text-transform: uppercase;
+}
+.inc-exp-container {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  border-radius: 15px;
+}
+.inc-exp-container > div {
+  flex: 1;
+  text-align: center;
+}
+.inc-exp-container > div:first-of-type {
+  border-right: 1px solid #dedede;
+}
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.money.plus {
+  color: #2ecc71;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.money.minus {
+  color: #c0392b;
+}
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+input[type="text"],
+input[type="number"] {
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 15px;
+}
+.btn {
+  cursor: pointer;
+  background-color: rgb(12, 59, 107);
+  box-shadow: var(--box-shadow);
+  color: #fff;
+  border: 0;
+  border-radius: 15px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+}
+.exp {
+  background-color: darkred;
+}
+.btn:focus,
+.del:focus {
+  outline: 0;
+}
+.ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+.li {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 15px;
+}
+
+.del {
+  cursor: pointer;
+  background-color: #e74c3c;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 5px;
+  position: absolute;
+  top: 50%;
+  left: -4%;
+
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 5px;
+}
+.li:hover .del {
+  opacity: 1;
 }
